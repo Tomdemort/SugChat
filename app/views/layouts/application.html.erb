@@ -10,6 +10,13 @@
   </head>
 
   <body>
+    <div id="header">
+      <%= link_to 'Sign In', new_user_session_path %>
+      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+      <%= link_to 'Sign Up', new_user_registration_path %>
+    </div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
