@@ -12,7 +12,7 @@
   <body>
     <div id="header">
       <% if user_signed_in? %>
-        You are signing in as <%= current_user.email %>
+        You are signing in as <%= current_user.name %>
         <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, form: {style: "display:inline"}, data: {confirm: 'Are you sure?'} %>
         <% else %>
         Welcome Guest!
