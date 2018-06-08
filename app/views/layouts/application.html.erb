@@ -11,9 +11,14 @@
 
   <body>
     <div id="header">
-      <%= link_to 'Sign In', new_user_session_path %>
-      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
-      <%= link_to 'Sign Up', new_user_registration_path %>
+      <% if user_signed_in? %>
+        You are signing in as <%= current_user.email %>
+        <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, form: {style: "display:inline"}, data: {confirm: 'Are you sure?'} %>
+        <% else %>
+        Welcome Guest!
+        <%= button_to 'Sign In', new_user_session_path, form: {style: "display:inline"} %>
+        <%= button_to 'Sign Up', new_user_registration_path, method: :get, form: {style: "display:inline"} %>
+      <% end %>
     </div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
