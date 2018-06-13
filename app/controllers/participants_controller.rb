@@ -4,7 +4,7 @@ class ParticipantsController < ApplicationController
   # GET /participants
   # GET /participants.json
   def index
-    @participants = Participant.order("user_id ASC").order("chat_room_id ASC")
+    @participants = Participant.order("user_id ASC").order("id ASC")
   end
 
   # GET /participants/1
