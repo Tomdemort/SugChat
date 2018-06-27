@@ -69,6 +69,6 @@ class ChatsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def chat_params
-      params.require(:chat).permit(:user_id, :chat_room_id, :message)
+      params.require(:chat).permit(:chat_room_id, :message, :user_id)
     end
 end
