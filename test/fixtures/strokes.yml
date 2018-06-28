@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  chat_room_id: 1
+  x: 1
+  'y': 1
+  rgb: 1
+  px: 1
+
+two:
+  chat_room_id: 1
+  x: 1
+  'y': 1
+  rgb: 1
+  px: 1

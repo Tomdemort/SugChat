@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Chat room:</strong>
+  <%= @stroke.chat_room_id %>
+</p>
+
+<p>
+  <strong>X:</strong>
+  <%= @stroke.x %>
+</p>
+
+<p>
+  <strong>Y:</strong>
+  <%= @stroke.y %>
+</p>
+
+<p>
+  <strong>Rgb:</strong>
+  <%= @stroke.rgb %>
+</p>
+
+<p>
+  <strong>Px:</strong>
+  <%= @stroke.px %>
+</p>
+
+<%= link_to 'Edit', edit_stroke_path(@stroke) %> |
+<%= link_to 'Back', strokes_path %>
