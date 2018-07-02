@@ -20,7 +20,9 @@
     <table align="right" border height="500" width="300">
       <tr>
         <td height="500">
-          <%= render "layouts/drawings" %>
+          <% if @chat_room %>
+            <%= render "layouts/drawings" %>
+          <% end %>
         </td>
       </tr>
     </table>
