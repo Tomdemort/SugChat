@@ -19,7 +19,11 @@
     </table>
     <table align="right" border height="500" width="300">
       <tr>
-        <td height="500">Drawing Table</td>
+        <td height="500">
+          <% if @chat_room %>
+            <%= render "layouts/drawings" %>
+          <% end %>
+        </td>
       </tr>
     </table>
     <p class="notice"><%= notice %></p>
