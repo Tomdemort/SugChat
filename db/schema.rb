@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2018_07_02_084733) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "removed"
   end
 
   create_table "chats", force: :cascade do |t|
