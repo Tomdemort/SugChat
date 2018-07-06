@@ -1,53 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<h1>
   <strong>Name:</strong>
   <%= @chat_room.name %>
-</p>
+</h1>
 
-<p>
-  <strong>Comment:</strong>
+<h2>
   <%= @chat_room.comment %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @chat_room.user_id %>
-</p>
+</h2>
+<% @messages = Chat.where(chat_room_id:@chat_room.id) %>
+<% @messages.reverse_each do |message| %>
+  <strong><font size = "3"><%= User.find(message.user_id).name %></font></strong>
+  <br>
+  <br>
+  <font size="5">
+	<% @sp_mes = message.message.scan(/.{1,20}/) %>
+	<% @sp_mes.each do |m| %>
+	  <%= m %>
+	  <br>
+	<% end %>
+  </font>
+  <%= message.created_at %>
+  <br>
+  <br>
+<% end %>
+<%= render 'chats/form', chat: Chat.new , chat_room_id: @id%>
 
 <%= link_to 'Edit', edit_chat_room_path(@chat_room) %> |
 <%= link_to 'Back', chat_rooms_path %>
-
-<div id="canvas">
-  <canvas id="draw-area" width="300" height="300"></canvas>
-</div>
-<div id="controll-panel">
-  <p>
-    <%= range_field_tag 'pen-width-slider', 1, :min => 1, :max => 20 %>
-    <span id="show-pen-width">1</span>px
-  </p>
-
-  <p>
-    <%= range_field_tag 'pen-color-red-slider', 0, :min => 0, :max => 255 %>
-    <span class="red">R</span> <span id="show-pen-red">0</span><br />
-    <%= range_field_tag 'pen-color-green-slider', 0, :min => 0, :max => 255 %>
-    <span class="green">G</span> <span id="show-pen-green">0</span><br />
-    <%= range_field_tag 'pen-color-blue-slider', 0, :min => 0, :max => 255 %>
-    <span class="blue">B</span> <span id="show-pen-blue">0</span><br />
-    <div id="preview-color"></div><br /><br />
-  </p>
-
-  <p>
-    <span id="save-button" class="controll-button">保存</span>
-  </p>
-  <p>
-    <span id="clear-button" class="controll-button">消去</span>
-  <p>
-  <p>
-    <span id="return-button" class="controll-button">戻す</span>
-  <p>
-</div>
-<div class="clearfix"></div>
-
-<div id="pictures">
-</div>
