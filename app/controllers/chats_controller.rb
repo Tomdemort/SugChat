@@ -4,9 +4,12 @@ class ChatsController < ApplicationController
   # GET /chats
   # GET /chats.json
   def index
-    @chats = Chat.page(params[:page]).per(20)
+    @search = Chat.ransack(params[:q])
+    @result = @search.result
+    @chats = @result.page(params[:page]).per(10)
     @users = User.all
     @chat_rooms = ChatRoom.all
+    render :layout => "chats_layout"
   end
 
   # GET /chats/1
@@ -65,6 +68,7 @@ class ChatsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+
     def set_chat
       @chat = Chat.find(params[:id])
     end
