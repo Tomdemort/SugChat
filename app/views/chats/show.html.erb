@@ -15,5 +15,5 @@
   <%= @chat.user_id %>
 </p>
 
-<%= link_to 'Edit', edit_chat_path(@chat) %> |
+<%= link_to 'Destroy', @chat, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', chats_path %>

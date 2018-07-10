@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="bg-image">
+      <div class="bg-mask">
+        <%= render 'layouts/header' %>
+        <div class="container-left">
+          <div class="table-responsive">
+            <table align="left" border>
+              <%= render 'layouts/chat_rooms' %>
+            </table>
+          </div>
+        </div>
+        <div class="container-right">
+          <div class="table-responsive">
+            <table align="center" width="300" border height="300">
+              <tr>
+                <td height="300">
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="container-center">
+          <div class="container">
+            <%= yield %>
+            <%= render 'layouts/footer' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

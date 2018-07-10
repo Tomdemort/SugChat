@@ -1,39 +1,64 @@
-.bg-red{
-  background: red;
-}
-
 .container-left{
-  padding-left: 20px;
+  padding-top: 150px;
+  margin-left: 20px;
+  width: 22%;
   float: left;
-  width: 20%;
 }
 
 .container-center{
+  padding-top: 60px;
   text-align: center;
-  width: 55%;
+  max-width: 45%;
   float: center;
   margin: 0 auto;
 }
 
 .container-right{
-  padding-right: 20px;
+  padding-top: 170px;
+  margin-right: 20px;
+  width: 25%;
   float: right;
-  width: 20%;
+}
+
+.container{
+  max-width: 100%;
+}
+
+.nav-item{
+  font-size: 18px;
+}
+
+.navbar-left{
+  min-height: 60px;
+  margin-bottom: 0;
 }
 
 .navbar-text {
+  color: #fff;
   font-size: 18px;
   padding-right: 30px;
+}
+
+.bg-image{
+  width: 100%;
+  height: 100vh;
+  background-image: url('bg_wing.jpg');
+  background-size: cover;
+}
+.bg-mask {
+  width: 100%;
+  height: 100vh;
+  background: rgba(255,255,255,0.8);
+  background-size: cover;
 }
 
 body {
   background-color: #fff;
   color: #333;
-  padding-top: 100px;
-  margin: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  display: inline;
 }
 
 p, ol, ul, td {
