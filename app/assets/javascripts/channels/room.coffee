@@ -3,9 +3,6 @@ $(document).ready ->
   remote_ctx = remote_canvas[0].getContext('2d')
   remote_ctx.lineWidth = 1
   remote_chat_room = $('#chat_room').attr("value")
-  console.log(remote_chat_room)
-  remote_strokes = $('#chat')
-  console.log(remote_strokes)
   remote_down = false
 
   remote_ctx.putPoint = (x, y)->
