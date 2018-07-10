@@ -2,6 +2,12 @@ class RoomChannel < ApplicationCable::Channel
   def subscribed
     # stream_from "some_channel"
     stream_from "room_channel"
+    @strokes = Stroke.where(chat_room_id: 1)
+    @strokes.each do |val|
+      speak(val)
+    end
+    stroke2 = Stroke.find(96)
+    speak(stroke2)
   end
 
   def unsubscribed
