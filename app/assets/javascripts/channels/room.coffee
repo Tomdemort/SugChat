@@ -18,7 +18,6 @@ $(document).ready ->
     @.stroke()
     @.closePath()
 
-
   remote_ctx.savePrevData = ->
     @.prevImageData = @.getImageData(0, 0, remote_canvas.width(), remore_canvas.height())
 
