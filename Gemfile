@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+# enable to use tab helper in bootstrap
+gem 'rails-bootstrap-tabs'
 # enable to use icon
 gem 'font-awesome-rails'
 # enable to add search form in chats log

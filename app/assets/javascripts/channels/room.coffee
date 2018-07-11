@@ -79,6 +79,3 @@ $(document).ready ->
 
     draw: (data) ->
       @perform 'draw', data: data
-
-    init_stroke: () ->
-      @perform 'init_stroke'
